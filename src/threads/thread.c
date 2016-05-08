@@ -215,6 +215,8 @@ thread_create (const char *name, int priority,
   intr_set_level (old_level);
 
   // Add child process to child list
+/*   commenting this to get rid of the errors caused due to
+	the undefined reference to add_child_process n dir_reopen
   t->parent = thread_tid();
   struct child_process *cp = add_child_process(t->tid);
   t->cp = cp;
@@ -226,7 +228,7 @@ thread_create (const char *name, int priority,
     {
       t->cwd = NULL;
     }
-
+*/
   /* Add to run queue. */
   thread_unblock (t);
 
